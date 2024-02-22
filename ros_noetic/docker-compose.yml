@@ -1,0 +1,20 @@
+version: '3'
+services:
+  noetic:
+    # image: osrf/ros:noetic-desktop
+    container_name: noetic
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host # Mandatory for GUI
+    devices:
+      - /dev/dri/
+    environment:
+      - DISPLAY=:0.0
+    volumes:
+      - $HOME/.Xauthority:/root/.Xauthority:ro
+      - ./catkin_ws:/root/catkin_ws
+      - /home/jaime/Desktop/slam_ws/bags:/root/catkin_ws/bags
+    stdin_open: true
+    tty: true
+    command: /bin/bash -c "source /opt/ros/noetic/setup.bash && roscore"
