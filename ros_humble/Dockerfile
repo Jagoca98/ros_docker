@@ -9,8 +9,6 @@ RUN apt-get update && apt-get install -y \
     nano 
 
 # Create a new catkin workspace inside the container
-# COPY ./src /root/catkin_ws/src
-RUN mkdir -p /root/catkin_ws/src
 WORKDIR /root/catkin_ws
 
 # Set the default entry point to start the ROS environment

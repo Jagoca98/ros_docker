@@ -2,6 +2,7 @@ version: '3'
 services:
   humble:
     # image: osrf/ros:humble-desktop
+    container_name: humble
     build:
       context: .
       dockerfile: Dockerfile
