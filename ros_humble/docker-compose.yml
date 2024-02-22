@@ -1,0 +1,18 @@
+version: '3'
+services:
+  humble:
+    # image: osrf/ros:humble-desktop
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host # Mandatory for GUI
+    devices:
+      - /dev/dri/
+    environment:
+      - DISPLAY=:0.0
+    volumes:
+      - $HOME/.Xauthority:/root/.Xauthority:ro
+      - ./catkin_ws:/root/catkin_ws
+    stdin_open: true
+    tty: true
+    command: tail -f /dev/null
