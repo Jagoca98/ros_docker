@@ -14,7 +14,6 @@ services:
     volumes:
       - $HOME/.Xauthority:/root/.Xauthority:ro
       - ./catkin_ws:/root/catkin_ws
-      - /home/jaime/Desktop/slam_ws/bags:/root/catkin_ws/bags
     stdin_open: true
     tty: true
     command: /bin/bash -c "source /opt/ros/noetic/setup.bash && roscore"

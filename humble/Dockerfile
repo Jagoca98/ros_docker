@@ -12,5 +12,4 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /root/catkin_ws
 
 # Set the default entry point to start the ROS environment
-# CMD ["/bin/bash"]
 CMD ["tail", "-f", "/dev/null"]
