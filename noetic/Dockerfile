@@ -1,4 +1,4 @@
-FROM osrf/ros:noetic-desktop
+FROM osrf/ros:noetic-desktop-full
 
 # Install essential packages
 RUN apt-get update && apt-get install -y \
