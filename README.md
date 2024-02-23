@@ -21,6 +21,12 @@ cd humble
 
 **3-** As it's said, you need to copy your ROS workspace here and rename it as ``catkin_ws`` in order to mount it in the docker.
 
+**3.5-** It's important to grant acces to Xserver to the container. You can do it by running the following command:
+
+```bash
+xhost +local:docker
+```
+
 **4-** After that, you can build the docker image with the following command:
 
 ```bash
