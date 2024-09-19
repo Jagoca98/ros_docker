@@ -12,9 +12,12 @@ services:
         GROUP_NAME: ${GROUP_NAME}
         WORKSPACE: ${WORKSPACE}
     network_mode: host # Mandatory for GUI
+    runtime: nvidia
     devices:
       - /dev/dri/
     environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
       - DISPLAY=$DISPLAY
     volumes:
       - $HOME/.Xauthority:$HOME/.Xauthority:ro
