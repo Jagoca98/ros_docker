@@ -11,8 +11,10 @@ services:
         GROUP_ID: ${GROUP_ID}
         GROUP_NAME: ${GROUP_NAME}
         WORKSPACE: ${WORKSPACE}
+    env_file:
+      - ./config.env
     network_mode: host # Mandatory for GUI
-    runtime: nvidia
+#    runtime: nvidia
     devices:
       - /dev/dri/
     environment:
